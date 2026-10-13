@@ -27,7 +27,7 @@
 <div class="container-scroller">
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row no-print">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-            <a class="navbar-brand brand-logo me-5" href="{{ route('dashboard') }}"><img src="{{ asset('assets/images/logos/cazeer-wordmark.png') }}" class="me-2" alt="Cazeer"></a>
+            <a class="navbar-brand brand-logo" href="{{ route('dashboard') }}"><img src="{{ asset('assets/images/logos/cazeer-icon-clean.png') }}" class="brand-icon" alt=""><img src="{{ asset('assets/images/logos/cazeer-wordmark.png') }}" class="brand-wordmark" alt="Cazeer"></a>
             <a class="navbar-brand brand-logo-mini" href="{{ route('dashboard') }}"><img src="{{ asset('assets/images/logos/cazeer-icon-clean.png') }}" alt="Cazeer"></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">

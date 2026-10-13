@@ -32,6 +32,24 @@ Akun awal hasil seeder:
 
 Ganti kata sandi akun awal sebelum penggunaan produksi.
 
+### Jika migrasi gagal dengan error 1071 (max key length 1000 bytes)
+
+Koneksi MySQL/MariaDB menggunakan InnoDB secara eksplisit agar tabel baru tidak mengikuti default server yang mungkin memakai MyISAM. Indeks `VARCHAR(255)` dengan `utf8mb4` dapat membutuhkan 1020 byte, melebihi batas 1000 byte MyISAM. Gunakan server dengan InnoDB yang mendukung indeks tersebut (misalnya MySQL 8 dengan row format DYNAMIC).
+
+Setelah memperbarui kode, hapus cache konfigurasi:
+
+```bash
+php artisan config:clear
+```
+
+Migrasi yang gagal dapat meninggalkan tabel `users` walaupun migrasinya belum tercatat selesai. **Hanya untuk database instalasi baru yang seluruh isinya boleh dihapus**, buat ulang tabel:
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+Perintah tersebut menghapus seluruh tabel pada database yang dipilih. Jika sudah ada data penting, jangan gunakan `migrate:fresh`: buat backup dan periksa engine, indeks, serta status migrasi sebelum memperbaiki tabel yang tertinggal. Perubahan konfigurasi engine hanya berlaku untuk tabel baru, bukan tabel yang sudah ada.
+
 ## Pengujian dan format
 
 ```bash

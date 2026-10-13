@@ -1,4 +1,4 @@
-const CACHE = 'cazeer-v2';
+const CACHE = 'cazeer-v7';
 const STATIC_ASSETS = ['/offline', '/manifest.webmanifest', '/favicon.ico', '/assets/css/style.css', '/assets/css/pos.css', '/assets/vendors/css/vendor.bundle.base.css', '/assets/vendors/js/vendor.bundle.base.js', '/assets/vendors/mdi/css/materialdesignicons.min.css', '/assets/vendors/datatables.net/js/dataTables.min.js', '/assets/vendors/datatables.net-bs5/css/dataTables.bootstrap5.min.css', '/assets/vendors/datatables.net-bs5/js/dataTables.bootstrap5.min.js', '/assets/images/logos/cazeer-brand.png', '/assets/images/logos/cazeer-wordmark.png', '/assets/images/logos/cazeer-icon-clean.png', '/assets/images/icons/icon-192x192.png', '/assets/images/icons/icon-512x512.png', '/assets/images/icons/maskable-icon-512x512.png'];
 
 self.addEventListener('install', event => event.waitUntil(

@@ -1,5 +1,10 @@
 :root {
   --pos-control-radius: 8px;
+  --pos-control-height: 34px;
+  --pos-control-height-sm: 34px;
+  --pos-control-font-size: .825rem;
+  --pos-control-padding-y: .375rem;
+  --pos-control-padding-x: .625rem;
   --cazeer-primary: #00b3a4;
   --cazeer-primary-dark: #008c80;
   --cazeer-navy: #0b203c;
@@ -24,21 +29,33 @@ a:hover { color: #006f66; }
 .sidebar .nav .nav-item.active > .nav-link, .sidebar .nav .nav-item:hover > .nav-link { color: var(--cazeer-primary-dark); }
 .sidebar .nav .nav-item.active > .nav-link i, .sidebar .nav .nav-item:hover > .nav-link i { color: var(--cazeer-primary-dark); }
 .navbar .navbar-brand-wrapper .navbar-brand img { width: 170px; height: 46px; object-fit: contain; object-position: left center; }
+.navbar .navbar-brand-wrapper .brand-logo .brand-icon { width: 28px; height: 32px; margin-right: 6px; }
+.navbar .navbar-brand-wrapper .brand-logo .brand-wordmark { width: 106px; height: 32px; }
 .navbar .navbar-brand-wrapper .brand-logo-mini img { width: 32px; height: 40px; object-fit: contain; }
 html, body, button, .btn, .dropdown-item, .nav-link, .table { font-size: .9rem !important; }
-.form-control, .form-select, input, select, textarea { font-size: .825rem !important; }
+.form-control, .form-select, input, select, textarea { font-size: var(--pos-control-font-size) !important; }
 .form-select, select { color: #000 !important; }
 .form-select option, select option { color: #000; background-color: #fff; }
 .form-select:disabled, select:disabled { color: #6c757d !important; }
-.form-control, .form-select, .typeahead, .tt-query, .tt-hint, .dataTables_wrapper input, .dataTables_wrapper select, .select2-container--default .select2-selection--single { min-height: 34px; padding: .375rem .625rem; border-radius: var(--pos-control-radius); }
-input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="hidden"]):not(.form-control), select:not(.form-select), textarea:not(.form-control) { min-height: 34px; padding: .375rem .625rem; border: 1px solid #ced4da; border-radius: var(--pos-control-radius); }
-textarea.form-control, textarea:not(.form-control) { min-height: 68px; line-height: 1.4; }
+.form-control, .form-select, .typeahead, .tt-query, .tt-hint, .dataTables_wrapper input, .dataTables_wrapper select, .select2-container--default .select2-selection--single { min-height: var(--pos-control-height); padding: var(--pos-control-padding-y) var(--pos-control-padding-x); border-radius: var(--pos-control-radius); line-height: 1.5; }
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="hidden"]):not(.form-control), select:not(.form-select), textarea:not(.form-control) { min-height: var(--pos-control-height); padding: var(--pos-control-padding-y) var(--pos-control-padding-x); border: 1px solid #ced4da; border-radius: var(--pos-control-radius); line-height: 1.5; }
+input.form-control, select.form-control, .form-select, .select2-container--default .select2-selection--single { height: var(--pos-control-height); }
+.form-select { padding-right: 2.5rem; }
+select[multiple], select[size]:not([size="1"]) { height: auto; }
+textarea.form-control, textarea:not(.form-control) { height: auto; min-height: 68px; line-height: 1.4; resize: vertical; }
+.form-control[type="file"] { overflow: hidden; }
+.form-control::file-selector-button { height: calc(var(--pos-control-height) - 2px); padding: 0 var(--pos-control-padding-x); margin: calc(-1 * var(--pos-control-padding-y)) calc(-1 * var(--pos-control-padding-x)); margin-inline-end: var(--pos-control-padding-x); line-height: 1.5; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .375rem; min-height: var(--pos-control-height); padding: var(--pos-control-padding-y) .75rem; border-radius: var(--pos-control-radius); font-size: var(--pos-control-font-size) !important; line-height: 1.5; vertical-align: middle; }
+.btn.btn-sm, .btn-group-sm > .btn { min-height: var(--pos-control-height-sm); padding: .375rem .625rem; border-radius: var(--pos-control-radius); }
+input.form-control-sm, select.form-control-sm, .form-select-sm { height: var(--pos-control-height-sm); min-height: var(--pos-control-height-sm); padding-top: .375rem; padding-bottom: .375rem; }
+.btn-link { min-height: auto; }
+.btn > .spinner-border { flex-shrink: 0; }
 .form-control:focus, .form-select:focus, input:focus, select:focus, textarea:focus { border-color: #00b3a4; box-shadow: 0 0 0 3px rgba(0, 179, 164, .14); outline: 0; }
-.select2-container--default .select2-selection--single .select2-selection__rendered { color: #000; line-height: 22px; padding-left: 0; font-size: .825rem; }
+.select2-container--default .select2-selection--single .select2-selection__rendered { color: #000; line-height: 1.5; padding-left: 0; font-size: var(--pos-control-font-size); }
 .select2-container--default .select2-results__option { color: #000; }
-.select2-container--default .select2-selection--single .select2-selection__arrow { height: 32px; }
+.select2-container--default .select2-selection--single .select2-selection__arrow { height: calc(var(--pos-control-height) - 2px); }
 .form-label, .form-check-label { font-size: .825rem; }
-.input-group-text { padding: .375rem .625rem; font-size: .825rem; }
+.input-group-text { min-height: var(--pos-control-height); padding: var(--pos-control-padding-y) var(--pos-control-padding-x); border-radius: var(--pos-control-radius); font-size: var(--pos-control-font-size); line-height: 1.5; }
 .card, .auth-card { border-radius: var(--pos-control-radius); }
 .card { border: 1px solid rgba(31, 35, 48, .07); box-shadow: 0 5px 18px rgba(31, 35, 48, .045); }
 .card-header { min-height: 54px; display: flex; align-items: center; padding: .85rem 1.2rem; border-bottom: 1px solid rgba(31, 35, 48, .07); background: linear-gradient(180deg, #fff, #fbfbfd); color: #292936; font-weight: 700; }
@@ -57,11 +74,11 @@ textarea.form-control, textarea:not(.form-control) { min-height: 68px; line-heig
 .modal-footer { padding: .85rem 1.25rem; border-top-color: #ececf1; background: #fafafd; }
 .filter-card { border-left: 3px solid #00b3a4; }
 .empty-state { padding: 2.5rem 1rem !important; color: #8a8a96; }
-.btn > i { display: inline-flex; align-items: center; justify-content: center; min-width: 24px; height: 24px; margin: -3px 5px -3px -5px; border-radius: 6px; background: rgba(255, 255, 255, .18); font-size: 1rem; transition: transform .15s ease, background-color .15s ease; }
+.btn > i { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; width: 20px; height: 20px; margin: 0; border-radius: 6px; background: rgba(255, 255, 255, .18); font-size: 1rem; line-height: 1; transition: transform .15s ease, background-color .15s ease; }
 .btn:hover > i { transform: translateY(-1px) scale(1.05); background: rgba(255, 255, 255, .28); }
 .btn-light > i, .btn-outline-primary > i { background: rgba(0, 179, 164, .12); color: #008c80; }
 .btn-danger > i { background: rgba(255, 255, 255, .2); }
-.btn-sm > i { min-width: 21px; height: 21px; margin: -3px 2px; border-radius: 5px; font-size: .9rem; }
+.btn-sm > i { width: 18px; height: 18px; border-radius: 5px; font-size: .9rem; }
 .money { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .field-error { color: #dc3545; min-height: 1rem; }
 .toast-container { z-index: 2000; }
@@ -88,7 +105,7 @@ textarea.form-control, textarea:not(.form-control) { min-height: 68px; line-heig
 .payment-summary > div { padding: .7rem .8rem; border-radius: 8px; background: #f8f8fb; }
 .payment-summary .payment-total { background: rgba(0, 179, 164, .10); color: #006f66; }
 .cart-panel { position: sticky; top: 85px; }
-.dataTables_wrapper .dt-search input, .dataTables_wrapper .dt-length select { min-height: 34px; border: 1px solid #CED4DA; border-radius: var(--pos-control-radius); padding: .375rem .625rem; }
+.dt-container .dt-search input, .dt-container .dt-length select { height: var(--pos-control-height-sm); min-height: var(--pos-control-height-sm); }
 .auth-page { min-height: 100vh; background: #f3faf9; color: #0b203c; }
 .auth-brand { position: fixed; top: 24px; left: 32px; display: flex; align-items: center; color: #0b203c; text-decoration: none; }
 .auth-brand img { width: 250px; height: auto; max-height: 82px; object-fit: contain; object-position: left center; }
@@ -97,7 +114,8 @@ textarea.form-control, textarea:not(.form-control) { min-height: 68px; line-heig
 .auth-title { margin: 0 0 8px; font-size: 2.35rem; line-height: 1.15; font-weight: 700; letter-spacing: -.035em; }
 .auth-subtitle { margin-bottom: 32px; color: #6c6c68; font-size: .9rem; }
 .auth-card .form-label { margin-bottom: 7px; color: #17120f; font-size: .875rem; font-weight: 700; }
-.auth-card .form-control { min-height: 44px; padding: .65rem .8rem; border-color: #b9b9b4; border-radius: var(--pos-control-radius); background: #fff; font-size: .875rem !important; }
+.auth-card { --pos-control-height: 44px; --pos-control-font-size: .875rem; --pos-control-padding-y: .65rem; --pos-control-padding-x: .8rem; }
+.auth-card .form-control { border-color: #b9b9b4; background: #fff; }
 .auth-card .form-control:focus { border-color: #00b3a4; box-shadow: 0 0 0 3px rgba(0, 179, 164, .14); }
 .password-field { position: relative; }
 .password-field .form-control { padding-right: 82px; }
@@ -105,7 +123,7 @@ textarea.form-control, textarea:not(.form-control) { min-height: 68px; line-heig
 .auth-card .form-check { display: flex; align-items: center; gap: .625rem; min-height: 20px; padding-left: 0; }
 .auth-card .form-check-input { flex: 0 0 auto; float: none; width: 17px; height: 17px; margin: 0; border-color: #9ca69d; cursor: pointer; }
 .auth-card .form-check-label { margin: 0; color: #4f5b52; line-height: 1.25; cursor: pointer; }
-.auth-submit { min-width: 145px; min-height: 42px; padding: .6rem 1.5rem; border-radius: 24px; font-weight: 700; }
+.auth-submit { min-width: 145px; font-weight: 700; }
 .offline-card { width: min(420px, calc(100% - 32px)); padding: 36px; border: 1px solid rgba(20, 35, 59, .08); border-radius: 12px; background: #fff; box-shadow: 0 12px 36px rgba(20, 35, 59, .08); }
 .offline-logo { display: block; width: 220px; max-width: 100%; height: auto; margin: 0 auto 28px; }
 @media (max-width: 991px) { .cart-panel { position: static; } }

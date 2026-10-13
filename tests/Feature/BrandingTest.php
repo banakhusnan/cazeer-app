@@ -63,7 +63,7 @@ class BrandingTest extends TestCase
     {
         $serviceWorker = file_get_contents(public_path('service-worker.js'));
 
-        $this->assertStringContainsString("const CACHE = 'cazeer-v2'", $serviceWorker);
+        $this->assertStringContainsString("const CACHE = 'cazeer-v7'", $serviceWorker);
         $this->assertStringContainsString('assets/images/logos/cazeer-brand.png', $serviceWorker);
         $this->assertStringContainsString('assets/images/icons/maskable-icon-512x512.png', $serviceWorker);
         $this->assertStringNotContainsString('plantory', strtolower($serviceWorker));
